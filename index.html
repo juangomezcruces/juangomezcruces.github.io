@@ -224,8 +224,8 @@
         
         .interest-list {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
             gap: 1.5rem;
         }
         
@@ -235,9 +235,12 @@
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             flex: 1;
-            min-width: 250px;
+            min-width: 0; /* Allows items to shrink below min-content size */
             text-align: center;
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Make all items the same height */
         }
         
         .interest-item:hover {
@@ -249,6 +252,16 @@
             font-size: 2rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
+        }
+        
+        .interest-item h4 {
+            margin-bottom: 0.8rem;
+            min-height: 3rem; /* Ensures title takes same space even if it wraps */
+        }
+        
+        .interest-item p {
+            margin-bottom: 0;
+            flex-grow: 1; /* Makes paragraphs take up remaining space */
         }
         
         /* Footer */
@@ -283,6 +296,17 @@
         }
         
         /* Responsive Design */
+        @media (max-width: 992px) {
+            .interest-list {
+                flex-wrap: wrap;
+            }
+            
+            .interest-item {
+                flex: 0 0 calc(50% - 1rem);
+                min-width: 0;
+            }
+        }
+        
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2.5rem;
@@ -320,6 +344,10 @@
             .profile-image {
                 margin-bottom: 2rem;
             }
+            
+            .interest-item {
+                flex: 0 0 100%;
+            }
         }
         
         /* Animations */
@@ -346,7 +374,7 @@
             font-weight: 500;
             transition: var(--transition);
             border: none;
-            cursor: pointer;
+            cursor: button;
         }
         
         .btn:hover {
@@ -442,7 +470,7 @@
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="mailto:jgomezcruces1@gsu.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:juan.gomezcruces@hpi.de" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 <a href="https://twitter.com/juangocr" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
                 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="#" aria-label="Google Scholar"><i class="fab fa-google-scholar"></i></a>
