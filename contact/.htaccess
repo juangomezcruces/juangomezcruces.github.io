@@ -1,0 +1,21 @@
+# Prevent directory listing
+Options -Indexes
+
+# PHP security settings
+php_flag display_errors off
+php_value error_log logs/php_errors.log
+
+# Prevent access to sensitive files
+<Files ~ "(\.env|\.htaccess|send_email\.php|generate_csrf\.php)$">
+    Require all denied
+</Files>
+
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Prevent clickjacking
+Header always append X-Frame-Options SAMEORIGIN
+Header set X-Content-Type-Options nosniff
+Header set X-XSS-Protection "1; mode=block"
