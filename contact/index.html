@@ -7,6 +7,17 @@
     <!-- [Keep all header and navigation content unchanged] -->
 
     <!-- Updated Contact Form Section -->
+<form id="contactForm" action="send_email.php" method="POST">
+    <!-- CSRF Token (generated when page loads) -->
+    <input type="hidden" name="csrf_token" id="csrf_token" value="">
+    
+    <!-- Honeypot Field (hidden from humans) -->
+    <div style="position: absolute; left: -9999px;">
+        <label for="website">Leave this blank</label>
+        <input type="text" name="website" id="website">
+    </div>
+
+    
     <div class="contact-form">
         <h2>Send a Message</h2>
         <div id="form-status" class="status-message"></div>
