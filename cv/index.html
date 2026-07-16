@@ -290,6 +290,92 @@
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
     </style>
+    <!-- Visual refresh 2026 -->
+    <style id="refresh-2026">
+      :root{
+        --primary-color:#0a7c8a;
+        --secondary-color:#22303a;
+        --accent-color:#c2603d;      /* warm terracotta, ties to the banner */
+        --accent-soft:#e0a06a;
+        --muted:#5c6b73;
+        --line:#e4e8ea;
+        --bg-soft:#f5f8f9;
+      }
+      body{ color:#26333b; }
+
+      /* ---- Readability: constrain long prose ---- */
+      .profile-text p, .research-item p, .research-section > p{ max-width:70ch; }
+      .research-item p{ color:var(--muted); }
+      .profile-text p{ color:#33424b; }
+
+      /* ---- Interior headers: slimmer, label-style subtitle ---- */
+      .header{ padding:66px 0; }
+      .header h1{ font-size:2.3rem; letter-spacing:.4px; }
+      .header p{ text-transform:uppercase; letter-spacing:2.5px; font-size:.82rem; opacity:.92; }
+
+      /* ---- Homepage hero keeps the drama ---- */
+      body.home .header{ padding:120px 0; }
+      body.home .header h1{ font-size:3.6rem; }
+      body.home .header p.hero-affil{ text-transform:uppercase; letter-spacing:2.5px; font-size:.78rem; opacity:.85; margin-bottom:.5rem; }
+      body.home .header p.hero-tagline{ text-transform:none; letter-spacing:normal; font-family:var(--font-heading); font-weight:400; font-size:1.35rem; max-width:700px; margin:0 auto 1.7rem; opacity:1; }
+      .hero-actions{ display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+      .btn-hero{ padding:.8rem 1.7rem; }
+      .btn-hero-outline{ background:transparent; border:2px solid #fff; }
+      .btn-hero-outline:hover{ background:#fff; color:var(--primary-color); border-color:#fff; }
+
+      /* ---- Navigation polish ---- */
+      .nav-links a{ font-size:.95rem; letter-spacing:.3px; }
+      .nav-links a.active{ color:#fff; }
+      .nav-links a.active:after{ width:100%; background-color:var(--accent-color); }
+
+      /* ---- Section headings: accent underline bar ---- */
+      .research-section h2{ border-bottom:none; position:relative; padding-bottom:.7rem; margin-bottom:1.8rem; }
+      .research-section h2:after{ content:''; position:absolute; left:0; bottom:0; width:56px; height:3px; background:var(--accent-color); border-radius:2px; }
+
+      /* ---- Cards: white with an accent stripe, lighter shadow ---- */
+      .research-item{
+        background:#fff;
+        border:1px solid var(--line);
+        border-left:4px solid var(--primary-color);
+        border-radius:10px;
+        box-shadow:0 1px 3px rgba(16,32,40,.05);
+        transition:box-shadow .22s ease, transform .22s ease, border-color .22s ease;
+      }
+      .research-item:hover{
+        box-shadow:0 12px 28px rgba(16,32,40,.10);
+        transform:translateY(-3px);
+        border-left-color:var(--accent-color);
+      }
+      .research-item h3{ font-size:1.18rem; }
+      .research-item h3 a{ color:var(--primary-color); }
+      .research-item h3 a:hover{ color:var(--accent-color); }
+
+      /* ---- Homepage research-interest cards ---- */
+      .research-interests{ background:var(--bg-soft); border-radius:14px; }
+      .interest-item{ border:1px solid var(--line); box-shadow:0 1px 3px rgba(16,32,40,.05); }
+      .interest-item:hover{ box-shadow:0 12px 26px rgba(16,32,40,.10); transform:translateY(-5px); }
+      .interest-item i{ color:var(--primary-color); }
+
+      /* ---- Buttons ---- */
+      .btn{ background:var(--primary-color); border-radius:7px; letter-spacing:.2px; }
+      .btn:hover{ background:var(--accent-color); }
+
+      /* ---- Profile image ---- */
+      .profile-image img{ border-radius:14px; box-shadow:0 14px 34px rgba(16,32,40,.16); }
+
+      /* ---- Selected Work grid (homepage) ---- */
+      .selected-work{ margin:3.5rem 0 1rem; }
+      .selected-work h3{ color:var(--primary-color); text-align:center; font-size:1.7rem; margin-bottom:2rem; }
+      .work-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+      .work-card{ background:#fff; border:1px solid var(--line); border-top:4px solid var(--accent-color); border-radius:12px; padding:1.7rem; display:flex; flex-direction:column; box-shadow:0 1px 3px rgba(16,32,40,.05); transition:box-shadow .22s ease, transform .22s ease; }
+      .work-card:hover{ transform:translateY(-5px); box-shadow:0 16px 32px rgba(16,32,40,.12); }
+      .work-tag{ font-size:.7rem; text-transform:uppercase; letter-spacing:1.6px; color:var(--accent-color); font-weight:700; margin-bottom:.7rem; }
+      .work-card h4{ font-size:1.05rem; line-height:1.35; color:var(--secondary-color); margin-bottom:.8rem; }
+      .work-card p{ font-size:.92rem; color:var(--muted); margin-bottom:1.2rem; flex-grow:1; }
+      .work-card a.work-link{ font-weight:600; color:var(--primary-color); }
+      .work-card a.work-link:hover{ color:var(--accent-color); }
+      @media(max-width:768px){ .work-grid{ grid-template-columns:1fr; } }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -308,10 +394,10 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="https://juangomezcruces.github.io/" class="active"><i class="fas fa-home"></i> <span class="sr-only">Home</span></a></li>
+                <li><a href="https://juangomezcruces.github.io/"><i class="fas fa-home"></i> <span class="sr-only">Home</span></a></li>
                 <li><a href="https://juangomezcruces.github.io/research/">Research</a></li>
                 <li><a href="https://juangomezcruces.github.io/teaching">Teaching</a></li>
-                <li><a href="https://juangomezcruces.github.io/cv/">CV</a></li>
+                <li><a href="https://juangomezcruces.github.io/cv/" class="active">CV</a></li>
                 <li><a href="https://juangomezcruces.github.io/datasets/">Datasets</a></li>
                 <li><a href="https://juangomezcruces.github.io/ai-tools/">AI Tools</a></li>
             </ul>
