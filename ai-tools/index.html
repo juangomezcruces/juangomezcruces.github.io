@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan S. Gómez Cruces, Ph.D. - Political Scientist</title>
+    <title>Juan S. Gómez Cruces, Ph.D. - AI Tools</title>
     
     <!-- Favicon -->
     <link rel="icon" href="https://juangomezcruces.github.io/JSGCprofile.jpeg" sizes="32x32">
@@ -45,18 +45,6 @@
             background-color: #fff;
             overflow-x: hidden;
         }
-
-        .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
         
         a {
             color: var(--primary-color);
@@ -107,7 +95,7 @@
         }
         
         .header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 0.5rem;
             color: white;
         }
@@ -185,95 +173,54 @@
             padding: 4rem 0;
         }
         
-        .profile-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
+        .research-section {
             margin-bottom: 3rem;
         }
         
-        .profile-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-        
-        .profile-image img {
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .profile-text {
-            flex: 2;
-            min-width: 300px;
-        }
-        
-        .profile-text h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.3rem;
-            font-size: 1.5rem;
-        }
-        
-        .profile-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .research-interests {
-            background-color: var(--light-color);
-            padding: 3rem;
-            border-radius: 10px;
-            margin: 3rem 0;
-        }
-        
-        .research-interests h3 {
+        .research-section h2 {
             color: var(--primary-color);
             margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        
-        .interest-list {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: nowrap;
-            gap: 1.5rem;
-        }
-        
-        .interest-item {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            flex: 1;
-            min-width: 0; /* Allows items to shrink below min-content size */
-            text-align: center;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            height: 100%; /* Make all items the same height */
-        }
-        
-        .interest-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .interest-item i {
             font-size: 2rem;
-            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .research-item {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .research-item h3 {
+            color: var(--secondary-color);
             margin-bottom: 1rem;
         }
         
-        .interest-item h4 {
-            margin-bottom: 0.8rem;
-            min-height: 3rem; /* Ensures title takes same space even if it wraps */
+        .research-item p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
         }
         
-        .interest-item p {
-            margin-bottom: 0;
-            flex-grow: 1; /* Makes paragraphs take up remaining space */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         /* Footer */
@@ -308,17 +255,6 @@
         }
         
         /* Responsive Design */
-        @media (max-width: 992px) {
-            .interest-list {
-                flex-wrap: wrap;
-            }
-            
-            .interest-item {
-                flex: 0 0 calc(50% - 1rem);
-                min-width: 0;
-            }
-        }
-        
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2.5rem;
@@ -348,18 +284,6 @@
             .mobile-menu-btn {
                 display: block;
             }
-            
-            .profile-section {
-                flex-direction: column;
-            }
-            
-            .profile-image {
-                margin-bottom: 2rem;
-            }
-            
-            .interest-item {
-                flex: 0 0 100%;
-            }
         }
         
         /* Animations */
@@ -375,37 +299,6 @@
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
-        
-        /* Button Styles */
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: var(--transition);
-            border: none;
-            cursor: button;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent-color);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
     </style>
 </head>
 <body>
@@ -413,7 +306,7 @@
     <header class="header">
         <div class="container header-content">
             <h1 class="fade-in">Juan S. Gómez Cruces</h1>
-            <p class="fade-in delay-1">Universität Potsdam / Hasso-Plattner Institut</p>
+            <p class="fade-in delay-1">AI Tools</p>
         </div>
     </header>
     
@@ -425,12 +318,12 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="https://juangomezcruces.github.io/" class="active"><i class="fas fa-home"></i> <span class="sr-only">Home</span></a></li>
+                <li><a href="https://juangomezcruces.github.io/"><i class="fas fa-home"></i> <span class="sr-only">Home</span></a></li>
                 <li><a href="https://juangomezcruces.github.io/research/">Research</a></li>
-                <li><a href="https://juangomezcruces.github.io/teaching">Teaching</a></li>
+                <li><a href="https://juangomezcruces.github.io/teaching/">Teaching</a></li>
                 <li><a href="https://juangomezcruces.github.io/cv/">CV</a></li>
                 <li><a href="https://juangomezcruces.github.io/datasets/">Datasets</a></li>
-                <li><a href="https://juangomezcruces.github.io/ai-tools/">AI Tools</a></li>
+                <li><a href="https://juangomezcruces.github.io/ai-tools/" class="active">AI Tools</a></li>
             </ul>
         </div>
     </nav>
@@ -438,50 +331,21 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <section class="profile-section fade-in delay-2">
-                <div class="profile-image">
-                    <img src="https://juangomezcruces.github.io/JSGCfront.jpeg" alt="Juan S. Gómez Cruces" loading="lazy">
-                </div>
-                <div class="profile-text">
-                    <h2><em>Welcome! / ¡Bienvenidos! / ¡Bem-vindos!</em></h2>
-                    <p>I am a Postdoctoral Researcher in <a href="https://hpi.de/en/research/research-groups/digital-technology-governance-and-policy/" target="_blank"> <i>Digital Governance, Technology and Policy</a></i> research group at the Hasso-Plattner Institute of the Universität Potsdam. I am part of the <a href="https://pathtopower.global/" target="_blank"><i>Path to Power</i></a>, an academic research project funded by the German Agency for International Cooperation (GIZ). This project aims to understand the profound transformations in politics and society in the digital age.
-                    <p>I am also a Digital Democracy Expert at <a href="https://democracy-reporting.org/" target="_blank">Democracy Reporting International</a> in Berlin, where I study how online narratives and platform manipulation affect civil society, working within the framework of the European Union's Digital Services Act (DSA). Across both roles, my work centers on how digital platforms are regulated and how to produce rigorous, reproducible evidence about their behavior.</p>
-                    <p>I earned my Ph.D. in Political Science at Georgia State University with my dissertation entitled: Digital Divides and Dialogues: A Multidimensional Analysis of Populist Rhetoric, Social Media Interaction, and Societal Polarization in Latin America. My areas of specialization include comparative politics and political methodology with emphasis on quantitative and computational social science methods. </p>
-                    <p> My research has been published in the <I><a href="https://doi.org/10.1007/s42001-024-00299-y" target="_blank">Journal of Computational Social Science</i></a> and as a chapter contribution in the <a href="https://www.taylorfrancis.com/chapters/edit/10.4324/9781003489993-18/reducing-partisan-animus-populist-contexts-jennifer-mccoy-juan-gomez-cruces-ozlem-tuncel-levente-littvay" target="_blank"><i>The Ideational Approach to Populism, Volume II: Consequences and Mitigation</i></a>. I lead the interdisciplinary team behind <a href="https://apsi.sc.hpi.de" target="_blank">APSI (Automated Political Stance Identifier)</a>, an open-source, theory-driven NLP tool for political text classification. In the past, I collaborated as a Graduate Research Fellow for the <a href="https://www.cartercenter.org/peace/democracy/digital-threats-to-democracy.html" target="_blank">Digital Threats to Democracy initiative</a> at The Carter Center in Atlanta, Georgia.</p>
-                    <p>Feel free to <a href="https://juangomezcruces.github.io/contact">contact </a>me.</p>
-                    <a href="https://juangomezcruces.github.io/JSGC_CV_Jul_2026.pdf" class="btn">Download my CV</a>
-                </div>
-            </section>
-            
-            <section class="research-interests fade-in delay-3">
-                <h3>Research Interests</h3>
-                <div class="interest-list">
-                    <div class="interest-item">
-                        <i class="fas fa-globe-americas"></i>
-                        <h4>Latin American Politics</h4>
-                        <p>Comparative analysis of political systems and behavior in Latin America</p>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-chart-line"></i>
-                        <h4>Political Methodology</h4>
-                        <p>Advanced quantitative, causal, and computational social science methods</p>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-microchip"></i>
-                        <h4>Digital Governance &amp; Platform Regulation</h4>
-                        <p>Platform regulation, the EU Digital Services Act, and internet governance</p>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-users"></i>
-                        <h4>Populism & Polarization</h4>
-                        <p>Causes and consequences of populism and political polarization</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
+            <section class="research-section fade-in delay-2">
+                <h2>AI Tools</h2>
+                <p>Open-source, reproducible tools I build and maintain for computational social science and the analysis of political text.</p>
 
-    <!-- Footer -->
+                <div class="research-item">
+                    <h3><a href="https://apsi.sc.hpi.de" target="_blank">APSI — Automated Political Stance Identifier</a></h3>
+                    <p>An open-source, theory-driven NLP tool for zero-shot political stance detection. As team lead, I built and containerized (Docker) the public web application and maintain the open-source repository with reproducible workflows and documentation.</p>
+                    <p>Tool: <a href="https://apsi.sc.hpi.de" target="_blank">apsi.sc.hpi.de</a> &nbsp;·&nbsp; Code: <a href="https://github.com/juangomezcruces/apsi" target="_blank">github.com/juangomezcruces/apsi</a></p>
+                </div>
+
+            </section>
+
+
+    </main>
+     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
@@ -498,6 +362,8 @@
     <path d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/>
   </svg>
 </a>
+   
+    
             </div>
             <p class="copyright">&copy; 2026 Juan S. Gómez Cruces. All rights reserved.</p>
         </div>
@@ -535,30 +401,6 @@
                         navLinks.classList.remove('active');
                         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                     }
-                }
-            });
-        });
-        
-        // Add active class to current section in viewport
-        const sections = document.querySelectorAll('section');
-        const navItems = document.querySelectorAll('.nav-links a');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= (sectionTop - 300)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href') === `#${current}`) {
-                    item.classList.add('active');
                 }
             });
         });
